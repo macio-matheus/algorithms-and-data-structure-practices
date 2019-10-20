@@ -1,1 +1,1 @@
-# algoritms-pratices
+# algorithms-pratices
