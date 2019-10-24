@@ -1,1 +1,1 @@
-# algorithms-pratices
+# algorithms-and-data-structure-practices
