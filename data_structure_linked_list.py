@@ -13,13 +13,12 @@ class LinkedList:
 
         if self.head:
             pointer = self.head
-            print("Entrou no if", elemen)
+
             while pointer.next:
                 pointer = pointer.next
             pointer.next = Node(elemen)
         else:
             self.head = Node(elemen)
-            print("Entrou no else", elemen)
 
         self._size = self._size + 1
 
