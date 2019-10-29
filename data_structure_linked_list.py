@@ -12,16 +12,18 @@ class LinkedList:
         self.head = None
         self._size = 0
 
-    def append(self, elemen):
-
+    def append(self, el):
         if self.head:
             pointer = self.head
-
+            j = 0
             while pointer.next:
                 pointer = pointer.next
-            pointer.next = Node(elemen)
+                print("j: ", j)
+            print("Pointer last: ", pointer, "EL: ", el)
+            pointer.next = Node(el)
+            print("Pointer last: ", pointer.next, "EL: ", el)
         else:
-            self.head = Node(elemen)
+            self.head = Node(el)
 
         self._size = self._size + 1
 
@@ -29,24 +31,25 @@ class LinkedList:
         if index > (self._size - 1):
             return ValueError("Index error")
 
-        if self.head:
-            pointer, i = self.head, 0
-            last_node = pointer
-            while pointer.next:
-                if index == i:
-                    return last_node
-                last_node = pointer.next
-                i = i + 1
+        pointer = self.head
+        for _ in range(index):
+            if pointer:
+                pointer = pointer.next
+
+        return pointer
 
     def __len__(self):
         return self._size
-
-    # TODO: Imlement methos to get values by index
 
 
 if __name__ == '__main__':
     my_list = LinkedList()
     my_list.append(5)
     my_list.append(7)
+    my_list.append(10)
 
-    print(my_list.get(2))
+    print("Len: ", len(my_list))
+    for i in range(len(my_list)):
+        print(f"Element in {i} position: ", my_list.get(i))
+
+    print(my_list.get(0), my_list.get(1), my_list.get(2))
