@@ -18,10 +18,7 @@ class LinkedList:
             j = 0
             while pointer.next:
                 pointer = pointer.next
-                print("j: ", j)
-            print("Pointer last: ", pointer, "EL: ", el)
             pointer.next = Node(el)
-            print("Pointer last: ", pointer.next, "EL: ", el)
         else:
             self.head = Node(el)
 
@@ -48,8 +45,8 @@ if __name__ == '__main__':
     my_list.append(7)
     my_list.append(10)
 
-    print("Len: ", len(my_list))
     for i in range(len(my_list)):
         print(f"Element in {i} position: ", my_list.get(i))
 
+    print("---------------------------")
     print(my_list.get(0), my_list.get(1), my_list.get(2))
