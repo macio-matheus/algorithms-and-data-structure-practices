@@ -49,4 +49,4 @@ if __name__ == '__main__':
         print(f"Element in {i} position: ", my_list.get(i))
 
     print("---------------------------")
-    print(my_list.get(0), my_list.get(1), my_list.get(2))
+    print(my_list.get(0), my_list.get(1), my_list.get(2), my_list.get(3))
