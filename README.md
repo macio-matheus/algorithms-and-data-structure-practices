@@ -1,1 +1,8 @@
-# algorithms-and-data-structure-practices
+# Practicing algorithms and data structure
+
+Languages
+
+  - Python
+  - SQL
+  
+
