@@ -32,4 +32,3 @@ class Solution:
             if n in h:
                 return [h[n], i]
             h[num] = i
-
