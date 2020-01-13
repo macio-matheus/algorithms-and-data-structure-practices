@@ -69,3 +69,8 @@ class KMeans:
         plt.scatter(self.centers[:, 0], self.centers[:, 1], c='r')
         plt.scatter(self.ini_centers[:, 0], self.ini_centers[:, 1], c='k')
         plt.show()
+
+
+if __name__ == '__main__':
+    # TODO Get data and make basic training
+    pass
