@@ -11,9 +11,6 @@ class QNode(object):
 
 class LRUCache(object):
     def __init__(self, capacity):
-        """
-        :type capacity: int
-        """
         if capacity <= 0:
             raise ValueError("capacity > 0")
         self.hash_map = {}
@@ -21,14 +18,11 @@ class LRUCache(object):
         # No explicit doubly linked queue here (you may create one yourself)
         self.head = None
         self.end = None
-
         self.capacity = capacity
         self.current_size = 0
 
     def get(self, key):
-        """
-        :rtype: int
-        """
+
         if key not in self.hash_map:
             return -1
 
