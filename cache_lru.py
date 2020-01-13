@@ -1,5 +1,5 @@
 class QNode(object):
-    def __init__(self, key, value):
+    def __init__(self, key: int, value: int):
         self.key = key
         self.value = value
         self.prev = None
@@ -10,7 +10,7 @@ class QNode(object):
 
 
 class LRUCache(object):
-    def __init__(self, capacity):
+    def __init__(self, capacity: int):
         if capacity <= 0:
             raise ValueError("capacity > 0")
         self.hash_map = {}
@@ -21,7 +21,7 @@ class LRUCache(object):
         self.capacity = capacity
         self.current_size = 0
 
-    def get(self, key):
+    def get(self, key: int):
 
         if key not in self.hash_map:
             return -1
@@ -36,12 +36,7 @@ class LRUCache(object):
         print(f"Returned value: {node.value}")
         return node.value
 
-    def set(self, key, value):
-        """
-        :type key: int
-        :type value: int
-        :rtype: nothing
-        """
+    def set(self, key: int, value: int):
         if key in self.hash_map:
             node = self.hash_map[key]
             node.value = value
@@ -58,7 +53,7 @@ class LRUCache(object):
             self._set_head(new_node)
             self.hash_map[key] = new_node
 
-    def _set_head(self, node):
+    def _set_head(self, node: QNode):
         if not self.head:
             self.head = node
             self.end = node
@@ -68,7 +63,7 @@ class LRUCache(object):
             self.head = node
         self.current_size += 1
 
-    def _remove(self, node):
+    def _remove(self, node: QNode):
         if not self.head:
             return
 
@@ -83,8 +78,7 @@ class LRUCache(object):
             self.head = None
             self.end = None
 
-        # if the node we are removing is the one at the end, update the new end
-        # also not completely necessary but set the new end's previous to be NULL
+        # set new end node and set prev with None
         if self.end == node:
             self.end = node.next
             self.end.prev = None
