@@ -63,9 +63,9 @@ class LRUCache(object):
             self.head = node
         self.current_size += 1
 
-    def _remove(self, node: QNode):
+    def _remove(self, node: QNode) -> QNode:
         if not self.head:
-            return
+            return node
 
         # removing the node from somewhere in the middle; update pointers
         if node.prev:
