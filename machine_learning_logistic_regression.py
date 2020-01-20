@@ -18,14 +18,16 @@ class LogisticRegression(object):
     def fit(self, x_train: np, y_train: np):
         for i in range(10000):
             z = np.dot(x_train, self.w) + self.b
-        y_pred = LogisticRegression().sigmoid(z)
-        l = LogisticRegression().square_loss(y_pred, y_train)
-        gradient_w = np.dot((y_pred - y_train).T, x_train) / x_train.shape[0]
-        gradient_b = np.mean(y_pred - y_train)
-        self.w = self.w - self.lr * gradient_w
-        self.b = self.b - self.lr * gradient_b
+            y_pred = LogisticRegression().sigmoid(z)
+            l = LogisticRegression().square_loss(y_pred, y_train)
+            gradient_w = np.dot((y_pred - y_train).T, x_train) / x_train.shape[0]
+            gradient_b = np.mean(y_pred - y_train)
+            self.w = self.w - self.lr * gradient_w
+            self.b = self.b - self.lr * gradient_b
 
-        print(self.w, self.b, gradient_b)
+            print(self.w, '----', self.b, '----', gradient_b, '----', l)
+
+        return self.b
 
 
 if __name__ == '__main__':
