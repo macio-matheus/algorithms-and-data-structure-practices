@@ -3,12 +3,7 @@ Merge k sorted linked lists and return it as one sorted list. Analyze and descri
 
 Example:
 
-Input:
-[
-  1->4->5,
-  1->3->4,
-  2->6
-]
+Input:[1->4->5, 1->3->4, 2->6]
 Output: 1->1->2->3->4->4->5->6
 
 
@@ -34,8 +29,6 @@ Sorting cost O(N)O(N) space (depends on the algorithm you choose).
 Creating a new linked list costs O(N)O(N) space.
 
 """
-
-
 import heapq
 
 
@@ -49,7 +42,7 @@ class ListNode:
 
 
 class Solution:
-    def mergeKLists(self, lists):
+    def merge_klists(self, lists):
         """
         :type lists: List[ListNode]
         :rtype: ListNode
