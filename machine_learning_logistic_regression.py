@@ -16,7 +16,7 @@ class LogisticRegression(object):
     def sigmoid(x): return 1 / (1 + np.exp(-x))
 
     def fit(self, x_train: np, y_train: np):
-        for i in range(10000):
+        for i in range(100):
             z = np.dot(x_train, self.w) + self.b
             y_pred = LogisticRegression().sigmoid(z)
             l = LogisticRegression().square_loss(y_pred, y_train)
@@ -35,6 +35,8 @@ if __name__ == '__main__':
     age = [22, 25, 47, 52, 46, 56, 55, 60, 62, 61, 18, 28, 27, 29, 49, 55, 25, 58, 19, 18, 21, 26, 40, 45, 50, 54, 23]
     itens_buyer = [0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0]
     df = pd.DataFrame({"age": age, "itens_buyer": itens_buyer})
+
+    print('age: ', len(age), '---- itens_buyer: ', len(itens_buyer))
 
     test = df.sample(7)
     train = df[~df.isin(test)]
