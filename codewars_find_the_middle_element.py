@@ -16,6 +16,8 @@ Another example (just to make sure it is clear): gimme([5, 10, 14]) => 1
 def gimme(input_array):
     # Implement this function
     middle_item = sorted(input_array)[1]
-    for i, item in enumerate(input_array):
-        if item == middle_item:
-            return i
+    return input_array.index(middle_item)
+
+
+if __name__ == '__main__':
+    print(gimme([2, 1, 4]))
