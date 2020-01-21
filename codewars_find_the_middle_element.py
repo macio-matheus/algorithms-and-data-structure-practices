@@ -13,7 +13,7 @@ Another example (just to make sure it is clear): gimme([5, 10, 14]) => 1
 """
 
 
-def gimme(input_array):
+def gimme(input_array: list):
     # Implement this function
     middle_item = sorted(input_array)[1]
     return input_array.index(middle_item)

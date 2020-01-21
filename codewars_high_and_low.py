@@ -16,6 +16,6 @@ Output string must be two numbers separated by a single space, and highest numbe
 """
 
 
-def high_and_low(numbers):
+def high_and_low(numbers: str):
     numbers = [int(i) for i in numbers.split(" ")]
     return "{} {}".format(max(numbers), min(numbers))

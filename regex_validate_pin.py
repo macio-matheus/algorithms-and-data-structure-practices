@@ -8,5 +8,5 @@ If the function is passed a valid PIN string, return true, else return false.
 """
 
 
-def validate_pin(pin):
+def validate_pin(pin: str):
     return len(pin) in [4, 6] and pin.isdigit()
