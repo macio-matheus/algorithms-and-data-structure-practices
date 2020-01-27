@@ -47,3 +47,8 @@ if __name__ == '__main__':
 
     logistc_regression = LogisticRegression()
     logistc_regression.fit(x_train, y_train)
+
+
+
+
+
